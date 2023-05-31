@@ -1,0 +1,15 @@
+.container {
+    max-width: 500px;
+    margin-top: 5%;
+  }
+  .form-control {
+    border-radius: 5px;
+  }
+  .btn-primary {
+    background-color: #007bff;
+  }
+
+  body
+  {
+    background-color: cornsilk;
+  }
