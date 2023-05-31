@@ -8,14 +8,10 @@
   <link href="styles.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
-</head>
+
 <body>
   <div class="container">
-    <h1>Sign up</h1>
-    <div class="form-group">
-        <label for="username">Full Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your fullname">
-      </div>
+    <h1>Sign In</h1>
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
@@ -24,16 +20,9 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
       </div>
-      <div class="form-group">
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Re-enter your password">
-      </div>
-      <div class="form-group">
-        <label for="security-question">What is your favourite movie?</label>
-        <input type="text" class="form-control" id="security-question" name="security-question" placeholder="Type your answer">
-      </div>
-      <button onclick="signUp()" class="btn btn-primary">Sign up</button>
-      <p style="margin-top: 10px;"><a href="login.html">I already have an account!</a></p>
+      <button onclick="signIn()" type="submit" class="btn btn-primary">sign In</button>
+      <p style="margin-top: 10px;"><a href="forget_password.html">Forget Password? Click here to Reset the password!</a></p>
+      <p><a href="signup.html">Don't have an account? Sign up here!</a></p>
   </div>
   <script src="validation.js"></script>
   <script type="module">
@@ -54,12 +43,12 @@
       messagingSenderId: "848170129257",
       appId: "1:848170129257:web:268c66e07371f9a5e24ff8",
       measurementId: "G-P3E3DFD74P"
-    };  
+    };
   
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   </script>
- 
+  
 </body>
 </html>

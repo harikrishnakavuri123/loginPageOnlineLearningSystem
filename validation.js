@@ -16,6 +16,8 @@ function firebaseReady() {
     return db;
 }
 
+var db= firebaseReady();
+
 function writeDataToFirebase(db, path, data) {
     db.ref("data").on("value", function(snapshot) {
         var data = snapshot.val();
@@ -36,7 +38,6 @@ function signUp()
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     var answer = document.getElementById('security-question').value;
-    var db = firebaseReady();
     writeDataToFirebase(db, name, {
         "username": username,
         "password": password,
