@@ -1,4 +1,5 @@
 function firebaseReady() {
+    //this function connets our code with firebase api using the below credentials
     var firebaseConfig = {
       apiKey: "AIzaSyA3eokbfX6drKo_WVVwFlqblqxZzp5cmQE",
       authDomain: "lms-app-4271.firebaseapp.com",
@@ -19,6 +20,7 @@ function firebaseReady() {
 var db= firebaseReady();
 
 function writeDataToFirebase(db, path, data) {
+    //this function is a snippet to write on firebase realtime database
     db.ref("data").on("value", function(snapshot) {
         var data = snapshot.val();
     });
@@ -32,13 +34,16 @@ function writeDataToFirebase(db, path, data) {
       });
     });
 }
+
 function removeSpecialCharacters(str) {
+  //this function removes the special characters from the username using regular expression
   const regex = /[^a-zA-Z0-9 ]/g;
   return str.replace(regex, '');
 }
+
 function signUp()
 {
-  
+  //this function updates userData to firebase
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   var conpassword = document.getElementById('confirm-password').value;
@@ -72,8 +77,10 @@ function signUp()
     }
   }
 }
+
 function resetPassword() 
 {
+  //this function updates the password value in firebase
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   var conpassword = document.getElementById('confirm-password').value;
@@ -124,6 +131,7 @@ function resetPassword()
 
 function getUserCredentials()
 {
+// this snippet fetches the userData from firebase
 const ref = db.ref('/');
 ref.on('value', function(snapshot) {
   data = snapshot.val();
@@ -132,6 +140,7 @@ ref.on('value', function(snapshot) {
 }
 async function logIn()
 {
+  //this function verifies the user credentials and logs the user in successfully
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   var path = removeSpecialCharacters(username)
