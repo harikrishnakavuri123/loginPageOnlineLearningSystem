@@ -38,19 +38,18 @@ function removeSpecialCharacters(str) {
 }
 function signUp()
 {
-  var name = document.getElementById('name').value;
+  
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   var conpassword = document.getElementById('confirm-password').value;
   var answer = document.getElementById('security-question').value;
-  var nonEmptyFields = (name != '' && username != '' && password != '' && answer != '' && conpassword != '')
+  var nonEmptyFields = (username != '' && password != '' && answer != '' && conpassword != '')
   var passwordvalidation = (password === conpassword)
   var path = removeSpecialCharacters(username);
 
   if(nonEmptyFields && passwordvalidation)
   {
     writeDataToFirebase(db, path, {
-      "name": name,
       "username": username,
       "password": password,
       "answer" : answer
@@ -94,7 +93,6 @@ function resetPassword()
         if(data.answer == answer)
         {
           writeDataToFirebase(db, path, {
-            "name": name,
             "username": username,
             "password": password,
             "answer" : answer

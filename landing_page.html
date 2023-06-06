@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the landing page of LMS Application!</h1>
+    <p style="margin-top: 50px;"><a href="index.html">Click here to logout.</a></p>
+  </div>
+  <script src="validation.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA3eokbfX6drKo_WVVwFlqblqxZzp5cmQE",
+      authDomain: "lms-app-4271.firebaseapp.com",
+      databaseURL: "https://lms-app-4271-default-rtdb.firebaseio.com",
+      projectId: "lms-app-4271",
+      storageBucket: "lms-app-4271.appspot.com",
+      messagingSenderId: "848170129257",
+      appId: "1:848170129257:web:268c66e07371f9a5e24ff8",
+      measurementId: "G-P3E3DFD74P"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+  </script>
+</body>
+</html>
