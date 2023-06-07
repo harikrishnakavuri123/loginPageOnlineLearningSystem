@@ -22,6 +22,7 @@ var db= firebaseReady();
 function writeDataToFirebase(db, path, data) {
     //this function is a snippet to write on firebase realtime database
     db.ref("data").on("value", function(snapshot) {
+        //.ref is used for reference to a location in the firebase database.
         var data = snapshot.val();
     });
     return new Promise((resolve, reject) => {
